@@ -14,9 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        WebView.setWebContentsDebuggingEnabled(true)
+        WebView.setWebContentsDebuggingEnabled(true)
 
         val webView = findViewById<WebView>(R.id.test_wv)
         webView.webViewClient = object : WebViewClient(){}
+        webView.settings.javaScriptEnabled = true
         webView.loadUrl(loadingUrl)
     }
 }
